@@ -20,7 +20,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="text-body mt-4 max-w-xs text-sm leading-relaxed">
-            Delicious food, delivered to your door across Pakistan.
+            Delicious food, delivered to your door.
           </p>
         </div>
 
