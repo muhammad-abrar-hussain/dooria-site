@@ -1,90 +1,84 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { Logo } from "./Logo";
 
-const social = [
-  { label: "Dooria on Instagram", href: "#", icon: Instagram },
-  { label: "Dooria on Facebook", href: "#", icon: Facebook },
-  { label: "Dooria on LinkedIn", href: "#", icon: Linkedin },
-];
+const companyLinks = [
+  { label: "Features", to: "/", hash: "features" },
+  { label: "Our vision", to: "/", hash: "vision" },
+  { label: "How it works", to: "/", hash: "how-it-works" },
+] as const;
+
+const legalLinks = [
+  { label: "Terms of Service", to: "/terms-and-conditions" },
+  { label: "Privacy Policy", to: "/privacy-policy" },
+] as const;
 
 export function Footer() {
   return (
-    <footer className="no-print border-divider bg-surface-low border-t px-5 py-16 sm:px-8">
-      <div className="mx-auto grid w-full max-w-6xl gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+    <footer className="no-print border-divider bg-surface-low border-t px-5 py-14 sm:px-8">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo />
-          <p className="text-body mt-4 max-w-xs leading-relaxed">
-            Dooria brings your favourite food to your door — hot, fast and tracked every step of the
-            way. Groceries, parcels and daily essentials are next.
+          <p className="text-body mt-4 max-w-xs text-sm leading-relaxed">
+            Delicious food, delivered to your door across Pakistan.
           </p>
-          {/*<ul className="mt-6 flex gap-3">*/}
-          {/*  {social.map(({ label, href, icon: Icon }) => (*/}
-          {/*    <li key={label}>*/}
-          {/*      <a*/}
-          {/*        href={href}*/}
-          {/*        aria-label={label}*/}
-          {/*        className="border-divider bg-card text-brand-deep hover:border-brand-deep/40 hover:bg-surface flex size-10 items-center justify-center rounded-xl border transition-colors"*/}
-          {/*      >*/}
-          {/*        <Icon className="size-4" aria-hidden="true" />*/}
-          {/*      </a>*/}
-          {/*    </li>*/}
-          {/*  ))}*/}
-          {/*</ul>*/}
         </div>
 
         <nav aria-label="Company">
-          <h2 className="text-heading text-xs font-semibold tracking-[0.14em] uppercase">Company</h2>
+          <h2 className="text-heading text-xs font-semibold tracking-[0.14em] uppercase">
+            Company
+          </h2>
           <ul className="text-body mt-4 space-y-3 text-sm">
-            <li>
-              <Link to="/" hash="features" className="hover:text-brand-deep">
-                Features
-              </Link>
-            </li>
-            <li>
-              <Link to="/" hash="vision" className="hover:text-brand-deep">
-                Our vision
-              </Link>
-            </li>
-            <li>
-              <Link to="/" hash="how-it-works" className="hover:text-brand-deep">
-                How it works
-              </Link>
-            </li>
+            {companyLinks.map((link) => (
+              <li key={link.label}>
+                <Link
+                  to={link.to}
+                  hash={link.hash}
+                  className="hover:text-brand-deep transition-colors"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
         <nav aria-label="Legal">
           <h2 className="text-heading text-xs font-semibold tracking-[0.14em] uppercase">Legal</h2>
           <ul className="text-body mt-4 space-y-3 text-sm">
-            <li>
-              <Link to="/terms-and-conditions" className="hover:text-brand-deep">
-                Terms &amp; Conditions
-              </Link>
-            </li>
-            <li>
-              <Link to="/privacy-policy" className="hover:text-brand-deep">
-                Privacy Policy
-              </Link>
-            </li>
+            {legalLinks.map((link) => (
+              <li key={link.label}>
+                <Link to={link.to} className="hover:text-brand-deep transition-colors">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
         <div>
-          <h2 className="text-heading text-xs font-semibold tracking-[0.14em] uppercase">Contact</h2>
+          <h2 className="text-heading text-xs font-semibold tracking-[0.14em] uppercase">
+            Contact
+          </h2>
           <ul className="text-body mt-4 space-y-3 text-sm">
-            <li className="flex items-center gap-2">
-              <Mail className="text-brand-deep size-4" aria-hidden="true" />
-              <a href="mailto:support@dooria.app" className="hover:text-brand-deep">
-                support@dooria.app
+            <li className="flex items-start gap-2.5">
+              <Mail className="text-brand-deep mt-0.5 size-4 shrink-0" aria-hidden="true" />
+              <a
+                href="mailto:abrahussain304@gmail.com"
+                className="hover:text-brand-deep break-words transition-colors"
+              >
+                abrahussain304@gmail.com
               </a>
             </li>
-            <li className="text-muted">[Registered Address], Pakistan</li>
+            <li className="flex items-start gap-2.5">
+              <MapPin className="text-brand-deep mt-0.5 size-4 shrink-0" aria-hidden="true" />
+              <span>Lahore, Pakistan</span>
+            </li>
           </ul>
         </div>
       </div>
 
-      <div className="border-divider text-muted mx-auto mt-12 w-full max-w-6xl border-t pt-6 text-sm">
+      <div className="border-divider text-muted mx-auto mt-12 w-full max-w-6xl border-t pt-6 text-center text-sm">
         © {new Date().getFullYear()} Dooria. All rights reserved.
       </div>
     </footer>
