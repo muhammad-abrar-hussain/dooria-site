@@ -29,9 +29,13 @@ export default defineConfig(async ({ mode, command }) => {
   ];
 
   // Build the deployable server bundle with Nitro (build-only).
+  // Nitro auto-detects the deploy target: on Vercel (VERCEL=1) it selects the
+  // "vercel" preset and emits .vercel/output. Override with NITRO_PRESET, or
+  // fall back to node-server for a locally runnable build.
   if (command === "build") {
     const { nitro } = await import("nitro/vite");
-    plugins.push(nitro({ defaultPreset: "cloudflare-module" }));
+    const preset = process.env["NITRO_PRESET"];
+    plugins.push(nitro(preset ? { preset } : { defaultPreset: "node-server" }));
   }
 
   plugins.push(viteReact());
