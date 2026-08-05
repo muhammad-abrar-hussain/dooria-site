@@ -9,12 +9,19 @@ export interface LegalSection {
 
 interface LegalLayoutProps {
   title: string;
-  intro: string;
+  intro?: string;
+  effectiveDate?: string;
   lastUpdated: string;
   sections: LegalSection[];
 }
 
-export function LegalLayout({ title, intro, lastUpdated, sections }: LegalLayoutProps) {
+export function LegalLayout({
+  title,
+  intro,
+  effectiveDate,
+  lastUpdated,
+  sections,
+}: LegalLayoutProps) {
   const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "");
 
   useEffect(() => {
@@ -42,10 +49,17 @@ export function LegalLayout({ title, intro, lastUpdated, sections }: LegalLayout
       <div className="mx-auto w-full max-w-6xl">
         <header className="border-divider max-w-3xl border-b pb-8">
           <h1 className="text-3xl font-extrabold sm:text-4xl">{title}</h1>
-          <p className="text-body mt-4 text-lg leading-relaxed">{intro}</p>
-          <p className="text-muted mt-4 text-sm">
-            Last updated: <time dateTime="2026-08-05">{lastUpdated}</time>
-          </p>
+          {intro ? <p className="text-body mt-4 text-lg leading-relaxed">{intro}</p> : null}
+          <div className="text-muted mt-5 space-y-1 text-sm">
+            {effectiveDate ? (
+              <p>
+                <span className="text-heading font-semibold">Effective date:</span> {effectiveDate}
+              </p>
+            ) : null}
+            <p>
+              <span className="text-heading font-semibold">Last updated:</span> {lastUpdated}
+            </p>
+          </div>
         </header>
 
         <div className="mt-10 gap-14 lg:flex">
@@ -83,7 +97,7 @@ export function LegalLayout({ title, intro, lastUpdated, sections }: LegalLayout
                   <span className="text-brand-deep mr-2">{i + 1}.</span>
                   {section.title}
                 </h2>
-                <div className="text-body mt-4 space-y-4 leading-relaxed [&_li]:ml-5 [&_li]:list-disc [&_ul]:space-y-2">
+                <div className="text-body mt-4 space-y-4 leading-relaxed [&_a:hover]:underline [&_a]:font-medium [&_a]:text-brand-deep [&_h3]:mt-6 [&_h3]:mb-2 [&_h3]:font-semibold [&_h3]:text-heading [&_li]:ml-5 [&_li]:list-disc [&_strong]:font-semibold [&_strong]:text-heading [&_table]:w-full [&_table]:border-collapse [&_table]:text-sm [&_td]:border [&_td]:border-divider [&_td]:p-3 [&_td]:align-top [&_th]:border [&_th]:border-divider [&_th]:bg-surface-low [&_th]:p-3 [&_th]:text-left [&_th]:font-semibold [&_th]:text-heading [&_ul]:space-y-2">
                   {section.body}
                 </div>
               </section>
