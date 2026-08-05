@@ -379,9 +379,7 @@ const sections: LegalSection[] = [
     title: "Contact Us",
     body: (
       <p className="not-prose">
-        <strong>Dooria</strong>
-        <br />
-        Pakistan
+        <strong>Dooria</strong> — Pakistan
         <br />
         E-mail: <a href="mailto:abrahussain304@gmail.com">abrahussain304@gmail.com</a>
         <br />
