@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dooria">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FE7C12"/>
+      <stop offset="100%" stop-color="#F96503"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#g)"/>
+  <path d="M14 40h36a2 2 0 0 1 0 4H14a2 2 0 0 1 0-4Z" fill="#fff"/>
+  <path d="M32 18c8.8 0 16 6.7 16 15v3H16v-3c0-8.3 7.2-15 16-15Z" fill="#fff"/>
+  <circle cx="32" cy="15" r="3" fill="#fff"/>
+</svg>
