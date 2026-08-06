@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "@tanstack/react-router";
+import { ArrowLeft, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { BrandLink } from "./ui/brand-button";
@@ -12,6 +12,15 @@ const navLinks = [
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = useLocation({ select: (location) => location.pathname });
+
+  // The transparent, light-on-dark header is only for the home page's dark hero.
+  // On every other page the top of the page is light, so keep the header solid.
+  const overHero = pathname === "/";
+  const transparent = overHero && !scrolled;
+
+  // Legal pages get a minimal, distraction-free header: just a link back home.
+  const isLegalPage = pathname === "/terms-and-conditions" || pathname === "/privacy-policy";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -20,17 +29,36 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  if (isLegalPage) {
+    return (
+      <header className="no-print border-divider bg-background/90 sticky top-0 z-50 w-full border-b backdrop-blur-md">
+        <nav
+          aria-label="Breadcrumb"
+          className="mx-auto flex w-full max-w-6xl items-center px-5 py-4 sm:px-8"
+        >
+          <Link
+            to="/"
+            className="text-body hover:text-brand-deep inline-flex items-center gap-2 text-sm font-semibold transition-colors"
+          >
+            <ArrowLeft className="size-4" aria-hidden="true" />
+            Back to home
+          </Link>
+        </nav>
+      </header>
+    );
+  }
+
   return (
     <header
       className={`no-print sticky top-0 z-50 w-full transition-colors duration-200 ${
-        scrolled ? "border-divider bg-background/90 border-b backdrop-blur-md" : "bg-transparent"
+        transparent ? "bg-transparent" : "border-divider bg-background/90 border-b backdrop-blur-md"
       }`}
     >
       <nav
         aria-label="Main navigation"
         className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8"
       >
-        <Logo light={!scrolled} />
+        <Logo light={transparent} />
 
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
@@ -39,7 +67,9 @@ export function Navbar() {
                 to={link.to}
                 {...(link.hash ? { hash: link.hash } : {})}
                 className={`rounded-md text-sm font-semibold transition-colors ${
-                  scrolled ? "text-body hover:text-brand-deep" : "text-on-primary/90 hover:text-on-primary"
+                  transparent
+                    ? "text-on-primary/90 hover:text-on-primary"
+                    : "text-body hover:text-brand-deep"
                 }`}
               >
                 {link.label}
@@ -61,7 +91,7 @@ export function Navbar() {
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
           className={`inline-flex size-11 items-center justify-center rounded-xl border md:hidden ${
-            scrolled ? "border-divider text-heading" : "text-on-primary border-white/40"
+            transparent ? "text-on-primary border-white/40" : "border-divider text-heading"
           }`}
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
