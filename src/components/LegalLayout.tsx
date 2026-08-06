@@ -47,18 +47,21 @@ export function LegalLayout({
   return (
     <main className="px-5 pt-12 pb-24 sm:px-8">
       <div className="mx-auto w-full max-w-6xl">
-        <header className="border-divider max-w-3xl border-b pb-8">
-          <h1 className="text-3xl font-extrabold sm:text-4xl">{title}</h1>
-          {intro ? <p className="text-body mt-4 text-lg leading-relaxed">{intro}</p> : null}
-          <div className="text-muted mt-5 space-y-1 text-sm">
-            {effectiveDate ? (
+        <header className="border-divider border-b pb-8">
+          <div className="max-w-3xl">
+            <h1 className="text-3xl font-extrabold sm:text-4xl">{title}</h1>
+            {intro ? <p className="text-body mt-4 text-lg leading-relaxed">{intro}</p> : null}
+            <div className="text-muted mt-5 space-y-1 text-sm">
+              {effectiveDate ? (
+                <p>
+                  <span className="text-heading font-semibold">Effective date:</span>{" "}
+                  {effectiveDate}
+                </p>
+              ) : null}
               <p>
-                <span className="text-heading font-semibold">Effective date:</span> {effectiveDate}
+                <span className="text-heading font-semibold">Last updated:</span> {lastUpdated}
               </p>
-            ) : null}
-            <p>
-              <span className="text-heading font-semibold">Last updated:</span> {lastUpdated}
-            </p>
+            </div>
           </div>
         </header>
 
