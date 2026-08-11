@@ -6,6 +6,7 @@ const companyLinks = [
   { label: "Features", to: "/", hash: "features" },
   { label: "Our vision", to: "/", hash: "vision" },
   { label: "How it works", to: "/", hash: "how-it-works" },
+  { label: "Partner with us", to: "/", hash: "partner" },
 ] as const;
 
 const legalLinks = [

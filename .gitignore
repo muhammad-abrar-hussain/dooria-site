@@ -33,3 +33,11 @@ dist-ssr
 
 # Vercel
 .vercel
+
+# Local env
+.env
+.env.*
+!.env.example
+
+# API schema (kept local)
+Dooria API.yaml

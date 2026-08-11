@@ -14,6 +14,7 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import { HeroSlider } from "@/components/HeroSlider";
+import { PartnerSection } from "@/components/PartnerSection";
 import { Section, SectionHeading } from "@/components/Section";
 import { StoreBadges } from "@/components/StoreBadges";
 import { BrandLink } from "@/components/ui/brand-button";
@@ -225,6 +226,9 @@ function Index() {
           />
         </div>
       </Section>
+
+      {/* Vendor onboarding */}
+      <PartnerSection />
     </main>
   );
 }
