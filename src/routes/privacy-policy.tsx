@@ -33,9 +33,9 @@ const sections: LegalSection[] = [
           <br />
           Dooria — Pakistan
           <br />
-          E-mail: <a href="mailto:abrahussain304@gmail.com">abrahussain304@gmail.com</a>
+          E-mail: <a href="mailto:dooria.support@gmail.com">dooria.support@gmail.com</a>
           <br />
-          Phone: <a href="tel:+923215565304">+92 321 5565304</a>
+          Phone: <a href="tel:+923175565304">0317 5565304</a>
         </p>
       </>
     ),
@@ -387,7 +387,7 @@ const sections: LegalSection[] = [
         </ul>
         <p>
           To exercise any of these rights, contact us at{" "}
-          <a href="mailto:abrahussain304@gmail.com">abrahussain304@gmail.com</a>. We may need to
+          <a href="mailto:dooria.support@gmail.com">dooria.support@gmail.com</a>. We may need to
           verify your identity before acting on a request.
         </p>
 
@@ -398,7 +398,7 @@ const sections: LegalSection[] = [
             from within the app (<strong>Profile → Delete Account</strong>), or
           </li>
           <li>
-            by e-mailing <a href="mailto:abrahussain304@gmail.com">abrahussain304@gmail.com</a> from
+            by e-mailing <a href="mailto:dooria.support@gmail.com">dooria.support@gmail.com</a> from
             your registered number/e-mail.
           </li>
         </ul>
@@ -446,9 +446,9 @@ const sections: LegalSection[] = [
           <br />
           Pakistan
           <br />
-          E-mail: <a href="mailto:abrahussain304@gmail.com">abrahussain304@gmail.com</a>
+          E-mail: <a href="mailto:dooria.support@gmail.com">dooria.support@gmail.com</a>
           <br />
-          Phone: <a href="tel:+923215565304">+92 321 5565304</a>
+          Phone: <a href="tel:+923175565304">0317 5565304</a>
         </p>
       </>
     ),

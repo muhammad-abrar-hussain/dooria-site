@@ -20,7 +20,10 @@ export function Navbar() {
   const transparent = overHero && !scrolled;
 
   // Legal pages get a minimal, distraction-free header: just a link back home.
-  const isLegalPage = pathname === "/terms-and-conditions" || pathname === "/privacy-policy";
+  const isLegalPage =
+    pathname === "/terms-and-conditions" ||
+    pathname === "/privacy-policy" ||
+    pathname === "/delete-account";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);

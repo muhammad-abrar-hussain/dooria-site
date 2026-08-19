@@ -92,7 +92,7 @@ const sections: LegalSection[] = [
         <li>You are responsible for all activity that occurs under your account.</li>
         <li>
           Notify us immediately at{" "}
-          <a href="mailto:abrahussain304@gmail.com">abrahussain304@gmail.com</a> of any unauthorised
+          <a href="mailto:dooria.support@gmail.com">dooria.support@gmail.com</a> of any unauthorised
           use of your account.
         </li>
         <li>
@@ -314,7 +314,7 @@ const sections: LegalSection[] = [
     body: (
       <p>
         You may delete your account through the app (<strong>Profile → Delete Account</strong>) or
-        by contacting <a href="mailto:abrahussain304@gmail.com">abrahussain304@gmail.com</a>.
+        by contacting <a href="mailto:dooria.support@gmail.com">dooria.support@gmail.com</a>.
         Deletion is handled in accordance with our <Link to="/privacy-policy">Privacy Policy</Link>,
         subject to records we are required by law to retain.
       </p>
@@ -381,9 +381,9 @@ const sections: LegalSection[] = [
       <p className="not-prose">
         <strong>Dooria</strong> — Pakistan
         <br />
-        E-mail: <a href="mailto:abrahussain304@gmail.com">abrahussain304@gmail.com</a>
+        E-mail: <a href="mailto:dooria.support@gmail.com">dooria.support@gmail.com</a>
         <br />
-        Phone: <a href="tel:+923215565304">+92 321 5565304</a>
+        Phone: <a href="tel:+923175565304">0317 5565304</a>
       </p>
     ),
   },

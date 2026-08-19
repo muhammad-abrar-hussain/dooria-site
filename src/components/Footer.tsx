@@ -12,6 +12,7 @@ const companyLinks = [
 const legalLinks = [
   { label: "Terms of Service", to: "/terms-and-conditions" },
   { label: "Privacy Policy", to: "/privacy-policy" },
+  { label: "Delete Account", to: "/delete-account" },
 ] as const;
 
 export function Footer() {
@@ -65,10 +66,10 @@ export function Footer() {
             <li className="flex items-start gap-2.5">
               <Mail className="text-brand-deep mt-0.5 size-4 shrink-0" aria-hidden="true" />
               <a
-                href="mailto:abrahussain304@gmail.com"
+                href="mailto:dooria.support@gmail.com"
                 className="hover:text-brand-deep break-words transition-colors"
               >
-                abrahussain304@gmail.com
+                dooria.support@gmail.com
               </a>
             </li>
             <li className="flex items-start gap-2.5">
