@@ -198,7 +198,10 @@ function Index() {
               suits you.
             </p>
             <StoreBadges className="mt-7" />
-            <p className="text-muted mt-6 text-sm">
+            <p className="text-body mt-5 text-sm">
+              Available now on Android. The iPhone app is in review and lands soon.
+            </p>
+            <p className="text-muted mt-5 text-sm">
               By downloading you agree to our{" "}
               <Link
                 to="/terms-and-conditions"

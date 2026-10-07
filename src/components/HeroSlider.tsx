@@ -87,11 +87,11 @@ export function HeroSlider() {
           <p className="text-on-primary/80 mt-4 max-w-xl text-base leading-relaxed sm:text-[1.0625rem]">
             {active.body}
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-col items-start gap-6">
             <BrandLink href="#download" size="lg">
               Get the Dooria app
             </BrandLink>
-            <StoreBadges />
+            <StoreBadges tone="light" />
           </div>
         </div>
 
